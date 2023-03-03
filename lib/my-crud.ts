@@ -31,7 +31,8 @@ export class MyCrudConstruct extends Construct {
        * DESTROY, cdk destroy will delete the table (even if it has data in it)
        */
       removalPolicy: RemovalPolicy.DESTROY, // NOT recommended for production code
-      billingMode: BillingMode.PAY_PER_REQUEST,
+      billingMode: BillingMode.PROVISIONED,
+      
     });
 
     const writeQueue = new sqs.Queue(this, "ItemsWriteQueue");
